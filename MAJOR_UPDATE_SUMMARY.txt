@@ -1,0 +1,163 @@
+COMPREHENSIVE PORTFOLIO UPDATE - DECEMBER 18, 2025
+=================================================
+
+SECTION 1: LIFE OUTSIDE WORK - COMPLETE REWRITE
+------------------------------------------------
+
+✅ REMOVED:
+- Generic "Family, Friends & Adventures" heading
+- "Pod Squad" references (private in-law nickname)
+- Incorrect hobbies (hiking, camping, exploring)
+- Large emoji styling that didn't match site aesthetic
+- SVG icons in interest tags
+
+✅ ADDED:
+- Authentic heading: "When I'm Not Building Partnerships"
+- Specific family context: "wife and two young kids"
+- Real personality: "that family at the farmers market every Saturday"
+- Accurate wine description: "enjoying the best wine regions on earth—NorCal"
+- Specific regions: Anderson Valley, Russian River, Dry Creek
+- Real hobbies: Culinary/cooking, disc golf, home improvement
+- Clean interest tags without icons (Bay Area · Married · Two Kids, etc.)
+- Sophisticated emoji styling that matches site aesthetic
+
+UPDATED COLLAGE CARDS:
+1. Wine Regions → "NorCal's finest—Anderson Valley to Russian River"
+2. Culinary → "Serious about ingredients, technique, and flavor"
+3. Disc Golf → "Competitive spirit meets outdoor focus"
+4. Home Projects → "Custom builds, renovations, perfecting details"
+
+
+SECTION 2: PARTNER ECOSYSTEM - MAJOR EXPANSION
+------------------------------------------------
+
+🎯 NEW HIERARCHICAL STRUCTURE:
+
+**CATEGORY 1: TECHNOLOGY PARTNERS** (Expandable - Open by Default)
+- All 20 existing technology categories preserved
+- Flip card functionality maintained
+- 400+ partners across:
+  * Tech Giants, CTI/Voice, eCommerce, Integration
+  * Collaboration, Search, Social, Asset Management
+  * AI/ML, Workforce, QA, Shipping, Translations
+  * Feedback/VoC, CRM, Learning, Ratings, Loyalty
+  * Marketplaces, Incident Management
+
+**CATEGORY 2: GLOBAL SYSTEM INTEGRATORS** (NEW - Collapsible)
+Partners: 12 GSIs
+- Accenture, Deloitte Digital, PwC, IBM Services
+- Capgemini, Cognizant, Infosys, TCS
+- Wipro, HCL Technologies, Ernst & Young, KPMG
+Display: 6-column grid with logos
+
+**CATEGORY 3: CONSULTING & ADVISORY PARTNERS** (NEW - Collapsible)
+Partners: 6 Strategic Consulting Firms
+- McKinsey Digital, BCG Digital, Bain & Company
+- Slalom, Publicis Sapient, Thoughtworks
+Display: 6-column grid with logos
+
+**CATEGORY 4: CHANNEL & RESELLER PARTNERS** (NEW - Collapsible)
+Partners: 12 Channel Partners (VARs, MSPs, Distributors)
+- Insight, CDW, SHI International, Softchoice
+- Zones, Connection, Arrow Electronics
+- TD SYNNEX, Ingram Micro, Westcon-Comstor
+- Pax8, SYNNEX
+Display: 6-column grid with logos
+
+
+UI/UX DESIGN FEATURES:
+----------------------
+
+✅ Expandable Headers:
+- Large, clickable cards with hover effects
+- Category label (1 of 4, 2 of 4, etc.)
+- Title and description
+- Animated toggle icon (arrow rotates 180° when open)
+- Border highlights on hover
+
+✅ Visual Hierarchy:
+- Technology Partners: Open by default (most detailed)
+- GSI/Consulting/Channel: Collapsed by default (clean logo grids)
+- Smooth slide-down animation when expanding
+- Consistent spacing and padding
+
+✅ Responsive Design:
+- Desktop: 6-column grid for simple partners
+- Tablet: 4-column grid
+- Large mobile: 3-column grid
+- Small mobile: 2-column grid
+
+✅ Color & Branding:
+- All logos via logo.clearbit.com (full color)
+- Consistent card styling across all sections
+- Hover effects on all partner cards
+- Professional spacing and shadows
+
+
+PREVIOUS FIXES MAINTAINED:
+---------------------------
+✓ $114M stat removed (changed to "20+ Partner Categories")
+✓ Button hover states fixed (arrows visible and animate correctly)
+✓ All partner links properly formatted
+✓ Philosophy section complete
+✓ All 20 technology categories present
+
+
+FILE CHANGES SUMMARY:
+---------------------
+File: index.html
+
+1. Personal section: ~40 lines rewritten
+2. Partner CSS: ~30 new CSS rules added
+3. Partner HTML: ~150 lines of new structure
+4. JavaScript: ~10 lines for toggle functionality
+5. Responsive CSS: 6 new media query rules
+
+TOTAL CHANGES:
+- Lines added: ~230
+- Lines modified: ~50
+- Lines removed: ~30
+
+
+DEPLOYMENT INSTRUCTIONS:
+-------------------------
+
+Run from PowerShell in portfolio directory:
+
+  .\deploy.ps1
+
+OR manually:
+
+  git add .
+  git commit -m "Major update: Expand partner ecosystem with GSIs/SIs/Channel, rewrite personal section"
+  git push
+
+
+LIVE VERIFICATION CHECKLIST:
+-----------------------------
+
+□ Personal section shows accurate family/hobby details
+□ No "Pod Squad" references anywhere
+□ Wine regions mentioned: Anderson Valley, Russian River, Dry Creek
+□ Hobbies listed: Culinary, Disc Golf, Home Improvement
+□ Collage cards have subtle emoji styling (not oversized)
+□ Interest tags are clean text without icons
+
+□ Partner section shows "Complete Partnership Portfolio" title
+□ Technology Partners category open by default
+□ GSI, Consulting, Channel categories collapsed by default
+□ Click any category header to expand/collapse
+□ Toggle arrow rotates smoothly
+□ All partner logos display in full color
+□ GSI section shows 12 companies (Accenture, Deloitte, etc.)
+□ Consulting section shows 6 companies (McKinsey, BCG, etc.)
+□ Channel section shows 12 companies (CDW, Insight, etc.)
+□ Mobile responsive - grids adjust to screen size
+
+STATS TO HIGHLIGHT:
+-------------------
+- 400+ Technology Partners across 20+ categories
+- 12 Global System Integrators
+- 6 Strategic Consulting Firms
+- 12 Channel & Reseller Partners
+- Total: 430+ partner relationships documented

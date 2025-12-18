@@ -1,0 +1,215 @@
+🚀 DEPLOYMENT CHECKLIST - MAJOR PORTFOLIO UPDATE
+================================================
+
+DATE: December 18, 2025
+CHANGES: Personal Section Rewrite + Partner Ecosystem Expansion
+
+---
+
+PRE-DEPLOYMENT CHECKLIST:
+-------------------------
+
+□ You're in the correct directory: C:\Users\mikes\mike-yakovlev-portfolio
+□ You've reviewed the changes in index.html
+□ You understand what's being deployed (see MAJOR_UPDATE_SUMMARY.txt)
+
+---
+
+DEPLOYMENT OPTIONS:
+-------------------
+
+OPTION 1 - Automated Script (Recommended):
+  1. Open PowerShell
+  2. cd C:\Users\mikes\mike-yakovlev-portfolio
+  3. .\deploy.ps1
+  4. Press 'y' when prompted
+  ✓ Script shows summary before deploying
+
+OPTION 2 - Manual Git Commands:
+  1. Open terminal in portfolio directory
+  2. git add .
+  3. git commit -m "Major update: GSIs/SIs/Channel partners, personal section rewrite"
+  4. git push
+  ✓ Use if PowerShell script fails
+
+---
+
+EXPECTED DEPLOYMENT TIME:
+-------------------------
+- Git push: 10-30 seconds
+- Vercel build: 30-60 seconds
+- Total: ~1-2 minutes until live
+
+---
+
+POST-DEPLOYMENT VERIFICATION:
+------------------------------
+
+STEP 1: Visit https://mike-yakovlev-portfolio.vercel.app/
+
+STEP 2: Check Personal Section ("Beyond Work")
+  □ Heading says "When I'm Not Building Partnerships"
+  □ Text mentions "wife and two young kids"
+  □ Text mentions "farmers market every Saturday"
+  □ NO "Pod Squad" references anywhere
+  □ Wine regions: Anderson Valley, Russian River, Dry Creek mentioned
+  □ Collage cards show:
+    - Wine Regions (🍷)
+    - Culinary (👨‍🍳)
+    - Disc Golf (🥏)
+    - Home Projects (🔨)
+  □ Interest tags are clean text (no SVG icons)
+  □ Emojis are subtle (not oversized)
+
+STEP 3: Check Stats Section
+  □ Shows "20+ Partner Categories" (not $114M)
+  □ Shows "15+ Years Experience"
+  □ Shows "400+ Partner Relationships"
+  □ Shows "35+ Team Members Led"
+
+STEP 4: Check Partner Ecosystem
+  □ Section title: "Complete Partnership Portfolio"
+  □ Subtitle mentions "technology, services, and channel ecosystems"
+  
+  Technology Partners (Category 1 of 4):
+    □ Section is OPEN by default
+    □ Shows all 20 flip cards
+    □ Hover over any card - flips to show partner logos
+    □ All logos in full color
+    □ Includes: Tech Giants, CTI/Voice, eCommerce, etc.
+  
+  Global System Integrators (Category 2 of 4):
+    □ Section is COLLAPSED by default
+    □ Click header - section expands smoothly
+    □ Shows 12 company logos in grid
+    □ Logos include: Accenture, Deloitte, PwC, IBM, etc.
+    □ Arrow icon rotates 180° when expanded
+    □ Click again - section collapses smoothly
+  
+  Consulting & Advisory (Category 3 of 4):
+    □ Section is COLLAPSED by default
+    □ Click header - section expands smoothly
+    □ Shows 6 company logos in grid
+    □ Logos include: McKinsey, BCG, Bain, etc.
+    □ Expandable/collapsible works correctly
+  
+  Channel & Reseller Partners (Category 4 of 4):
+    □ Section is COLLAPSED by default
+    □ Click header - section expands smoothly
+    □ Shows 12 company logos in grid
+    □ Logos include: CDW, Insight, SHI, etc.
+    □ Expandable/collapsible works correctly
+
+STEP 5: Test Button Hovers
+  □ Nav "Download Resume" button - arrow stays visible, turns purple on hover
+  □ Hero "Schedule a Call" button - arrow rotates and changes color
+  □ Hero "Download Resume" button - arrow stays visible on hover
+  □ CTA buttons - arrows work correctly
+
+STEP 6: Mobile Responsive Check
+  □ Open site on mobile device OR use browser DevTools
+  □ Personal section cards stack properly
+  □ Partner section headers are touch-friendly
+  □ Partner grids adjust to screen size
+  □ All expandable sections work on mobile
+  □ No horizontal scrolling
+  □ Touch targets are adequate (48px+)
+
+---
+
+TROUBLESHOOTING:
+----------------
+
+ISSUE: "Git push fails with authentication error"
+FIX: 
+  - Verify you're logged into GitHub
+  - Check if you need to set up SSH keys
+  - Try: git config credential.helper store
+
+ISSUE: "PowerShell script won't run"
+FIX:
+  - Run: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+  - OR use manual git commands instead
+
+ISSUE: "Changes not showing on live site"
+FIX:
+  - Wait 2-3 minutes for Vercel build
+  - Hard refresh browser (Ctrl+Shift+R or Cmd+Shift+R)
+  - Check Vercel dashboard for build status
+
+ISSUE: "Some images/logos not loading"
+FIX:
+  - logo.clearbit.com may be rate-limited
+  - Wait a few minutes and refresh
+  - Check browser console for specific errors
+
+ISSUE: "Expandable sections don't work"
+FIX:
+  - Check JavaScript console for errors
+  - Verify togglePartnerCategory function is present
+  - Try different browser
+
+---
+
+ROLLBACK PLAN (IF NEEDED):
+--------------------------
+
+If something goes wrong:
+
+  1. git log --oneline
+  2. git revert HEAD
+  3. git push
+
+This will revert to the previous version.
+
+---
+
+SUCCESS INDICATORS:
+-------------------
+
+✅ Personal section reflects YOUR actual life (not generic content)
+✅ All 4 partner categories display correctly
+✅ Expandable sections work smoothly
+✅ All 430+ partners are documented and accessible
+✅ Site loads fast on desktop and mobile
+✅ No console errors
+✅ Button hovers work correctly
+✅ All links functional
+
+---
+
+QUESTIONS TO ASK YOURSELF:
+--------------------------
+
+1. Does the personal section sound like ME?
+2. Does the partner portfolio reflect the FULL SCOPE of my work?
+3. Is the site easy to navigate?
+4. Would a hiring manager be impressed by this?
+5. Is everything accurate?
+
+If all answers are YES → You're good to go! 🎉
+
+---
+
+NOTES:
+------
+
+Files Created/Updated:
+- index.html (main changes)
+- deploy.ps1 (deployment script)
+- MAJOR_UPDATE_SUMMARY.txt (detailed changelog)
+- DESIGN_RATIONALE.txt (design decisions)
+- DEPLOYMENT_CHECKLIST.txt (this file)
+
+Total Changes:
+- ~230 lines added
+- ~50 lines modified  
+- ~30 lines removed
+- Net addition: ~250 lines
+
+Build Time: Approximately 1-2 minutes
+Cache Time: May take 5-10 minutes to propagate globally
+
+---
+
+🎯 READY TO DEPLOY? RUN: .\deploy.ps1

@@ -250,6 +250,30 @@
         .partner-logo-item img { width: 24px; height: 24px; object-fit: contain; margin-bottom: 4px; border-radius: 4px; }
         .partner-logo-item span { font-size: 0.625rem; color: var(--text-2); font-weight: 500; text-align: center; line-height: 1.2; }
 
+        /* Partner Category Sections */
+        .partner-category-section { margin-bottom: 60px; }
+        .partner-category-header { background: white; padding: 24px 32px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); cursor: pointer; transition: all 0.3s; margin-bottom: 24px; border: 2px solid transparent; }
+        .partner-category-header:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .partner-category-header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .partner-category-info { flex: 1; }
+        .partner-category-label { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px; }
+        .partner-category-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; margin-bottom: 4px; }
+        .partner-category-desc { font-size: 0.9375rem; color: var(--text-2); }
+        .partner-category-toggle { width: 48px; height: 48px; border-radius: 50%; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .partner-category-toggle svg { width: 24px; height: 24px; transition: transform 0.3s; }
+        .partner-category-header.active .partner-category-toggle { background: var(--accent); }
+        .partner-category-header.active .partner-category-toggle svg { transform: rotate(180deg); color: white; }
+        .partner-category-content { display: none; padding: 0 8px; }
+        .partner-category-content.active { display: block; animation: slideDown 0.3s ease-out; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Simple Partner Grid (for GSIs, SIs, Channel) */
+        .simple-partner-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+        .simple-partner-card { background: white; padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); transition: all 0.3s; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--border); }
+        .simple-partner-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--accent); }
+        .simple-partner-card img { width: 48px; height: 48px; object-fit: contain; margin-bottom: 12px; }
+        .simple-partner-card span { font-size: 0.8125rem; font-weight: 600; color: var(--text); }
+
         /* Personal Section */
         .personal { background: var(--bg-alt); }
         .personal-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
@@ -258,10 +282,11 @@
         .personal-interests { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
         .interest-tag { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: white; border-radius: 980px; font-size: 0.875rem; font-weight: 500; color: var(--text-2); box-shadow: var(--shadow-sm); }
         .interest-tag svg { width: 18px; height: 18px; color: var(--accent); }
+        .collage-icon { font-size: 2rem; margin-bottom: 12px; opacity: 0.85; }
         .personal-image { position: relative; }
         .personal-collage { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-        .collage-item { background: white; border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-md); text-align: center; }
-        .collage-item .emoji { font-size: 2.5rem; margin-bottom: 12px; }
+        .collage-item { background: white; border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-md); text-align: center; transition: all 0.3s; }
+        .collage-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         .collage-item h4 { font-size: 0.9375rem; font-weight: 700; margin-bottom: 4px; }
         .collage-item p { font-size: 0.8125rem; color: var(--text-2); }
 
@@ -302,6 +327,7 @@
         /* Responsive */
         @media (max-width: 1200px) {
             .partner-cards-grid { grid-template-columns: repeat(3, 1fr); }
+            .simple-partner-grid { grid-template-columns: repeat(4, 1fr); }
         }
         @media (max-width: 1024px) {
             .hero-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -309,6 +335,7 @@
             .hero-photo-wrapper { max-width: 320px; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .partner-cards-grid { grid-template-columns: repeat(2, 1fr); }
+            .simple-partner-grid { grid-template-columns: repeat(3, 1fr); }
             .philosophy-grid, .personal-grid { grid-template-columns: 1fr; gap: 40px; }
         }
         @media (max-width: 768px) {
@@ -317,6 +344,7 @@
             .btn-animated, .btn-secondary-animated { width: 100%; }
             .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
             .partner-cards-grid { grid-template-columns: 1fr; }
+            .simple-partner-grid { grid-template-columns: repeat(2, 1fr); }
             .philosophy-pillars { grid-template-columns: 1fr; }
             .personal-collage { grid-template-columns: 1fr; }
             .timeline-item { grid-template-columns: 1fr; gap: 8px; }
@@ -403,6 +431,98 @@
                     </div>
                 </div>
             </div>
+                </div>
+            </div>
+
+            <!-- Global System Integrators Section -->
+            <div class="partner-category-section">
+                <div class="partner-category-header" onclick="togglePartnerCategory(this)">
+                    <div class="partner-category-header-inner">
+                        <div class="partner-category-info">
+                            <div class="partner-category-label">Category 2 of 4</div>
+                            <h3 class="partner-category-title">Global System Integrators</h3>
+                            <p class="partner-category-desc">Strategic partnerships with leading GSIs for enterprise implementations and co-selling</p>
+                        </div>
+                        <div class="partner-category-toggle">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="partner-category-content">
+                    <div class="simple-partner-grid">
+                        <a href="https://accenture.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/accenture.com" alt="Accenture"><span>Accenture</span></a>
+                        <a href="https://deloitte.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/deloitte.com" alt="Deloitte"><span>Deloitte Digital</span></a>
+                        <a href="https://pwc.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/pwc.com" alt="PwC"><span>PwC</span></a>
+                        <a href="https://ibm.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/ibm.com" alt="IBM"><span>IBM Services</span></a>
+                        <a href="https://capgemini.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/capgemini.com" alt="Capgemini"><span>Capgemini</span></a>
+                        <a href="https://cognizant.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/cognizant.com" alt="Cognizant"><span>Cognizant</span></a>
+                        <a href="https://infosys.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/infosys.com" alt="Infosys"><span>Infosys</span></a>
+                        <a href="https://tcs.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/tcs.com" alt="TCS"><span>TCS</span></a>
+                        <a href="https://wipro.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/wipro.com" alt="Wipro"><span>Wipro</span></a>
+                        <a href="https://hcltech.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/hcltech.com" alt="HCL"><span>HCL Technologies</span></a>
+                        <a href="https://ey.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/ey.com" alt="EY"><span>Ernst & Young</span></a>
+                        <a href="https://kpmg.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/kpmg.com" alt="KPMG"><span>KPMG</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Consulting & Advisory Section -->
+            <div class="partner-category-section">
+                <div class="partner-category-header" onclick="togglePartnerCategory(this)">
+                    <div class="partner-category-header-inner">
+                        <div class="partner-category-info">
+                            <div class="partner-category-label">Category 3 of 4</div>
+                            <h3 class="partner-category-title">Consulting & Advisory Partners</h3>
+                            <p class="partner-category-desc">Strategic consulting firms for digital transformation and partnership strategy</p>
+                        </div>
+                        <div class="partner-category-toggle">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="partner-category-content">
+                    <div class="simple-partner-grid">
+                        <a href="https://mckinsey.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/mckinsey.com" alt="McKinsey"><span>McKinsey Digital</span></a>
+                        <a href="https://bcg.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/bcg.com" alt="BCG"><span>BCG Digital</span></a>
+                        <a href="https://bain.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/bain.com" alt="Bain"><span>Bain & Company</span></a>
+                        <a href="https://slalom.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/slalom.com" alt="Slalom"><span>Slalom</span></a>
+                        <a href="https://publicissapient.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/publicissapient.com" alt="Publicis Sapient"><span>Publicis Sapient</span></a>
+                        <a href="https://thoughtworks.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/thoughtworks.com" alt="Thoughtworks"><span>Thoughtworks</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Channel & Reseller Partners Section -->
+            <div class="partner-category-section">
+                <div class="partner-category-header" onclick="togglePartnerCategory(this)">
+                    <div class="partner-category-header-inner">
+                        <div class="partner-category-info">
+                            <div class="partner-category-label">Category 4 of 4</div>
+                            <h3 class="partner-category-title">Channel & Reseller Partners</h3>
+                            <p class="partner-category-desc">Strategic channel partnerships with VARs, MSPs, and distributors for scaled market reach</p>
+                        </div>
+                        <div class="partner-category-toggle">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="partner-category-content">
+                    <div class="simple-partner-grid">
+                        <a href="https://insight.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/insight.com" alt="Insight"><span>Insight</span></a>
+                        <a href="https://cdw.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/cdw.com" alt="CDW"><span>CDW</span></a>
+                        <a href="https://shi.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/shi.com" alt="SHI"><span>SHI International</span></a>
+                        <a href="https://softchoice.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/softchoice.com" alt="Softchoice"><span>Softchoice</span></a>
+                        <a href="https://zones.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/zones.com" alt="Zones"><span>Zones</span></a>
+                        <a href="https://connection.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/connection.com" alt="Connection"><span>Connection</span></a>
+                        <a href="https://arrow.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/arrow.com" alt="Arrow"><span>Arrow Electronics</span></a>
+                        <a href="https://tdsynnex.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/tdsynnex.com" alt="TD SYNNEX"><span>TD SYNNEX</span></a>
+                        <a href="https://ingrammicro.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/ingrammicro.com" alt="Ingram Micro"><span>Ingram Micro</span></a>
+                        <a href="https://westcon.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/westcon.com" alt="Westcon"><span>Westcon-Comstor</span></a>
+                        <a href="https://pax8.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/pax8.com" alt="Pax8"><span>Pax8</span></a>
+                        <a href="https://synnex.com" target="_blank" class="simple-partner-card"><img src="https://logo.clearbit.com/synnex.com" alt="SYNNEX"><span>SYNNEX</span></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -486,10 +606,26 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Partner Ecosystem</span>
-                <h2 class="section-title">Companies I've Partnered With</h2>
-                <p class="section-subtitle">Built and managed strategic partnerships across enterprise technology, eCommerce, communications, and more</p>
+                <h2 class="section-title">Complete Partnership Portfolio</h2>
+                <p class="section-subtitle">15+ years building and managing partnerships across technology, services, and channel ecosystems</p>
             </div>
-            <div class="partner-cards-grid">
+
+            <!-- Technology Partners Section -->
+            <div class="partner-category-section">
+                <div class="partner-category-header active" onclick="togglePartnerCategory(this)">
+                    <div class="partner-category-header-inner">
+                        <div class="partner-category-info">
+                            <div class="partner-category-label">Category 1 of 4</div>
+                            <h3 class="partner-category-title">Technology Partners</h3>
+                            <p class="partner-category-desc">400+ technology integrations across 20+ solution categories</p>
+                        </div>
+                        <div class="partner-category-toggle">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="partner-category-content active">
+                    <div class="partner-cards-grid">
                 <!-- Tech Giants -->
                 <div class="partner-flip-card">
                     <div class="partner-flip-inner">
@@ -1051,49 +1187,39 @@
             </div>
             <div class="personal-grid">
                 <div class="personal-content">
-                    <h3>Family, Friends & Adventures</h3>
-                    <p>Based in the San Francisco Bay Area, I'm passionate about spending quality time with family and friends. Nothing beats exploring California's wine country with my "Pod Squad"—a close group of friends who share a love for great wine, good food, and even better company.</p>
-                    <p>Whether it's planning detailed itineraries for group trips to Anderson Valley, hiking the trails of Marin County, or simply hosting a backyard barbecue, I believe life's best moments happen when you're surrounded by the people you care about.</p>
+                    <h3>When I'm Not Building Partnerships</h3>
+                    <p>Based in the San Francisco Bay Area with my wife and two young kids. We're that family at the farmers market every Saturday, probably debating which heirloom tomatoes to buy. I take food seriously—not in a pretentious way, but in a "life's too short for bad ingredients" way.</p>
+                    <p>I'm equally obsessive about enjoying the best wine regions on earth—NorCal. Anderson Valley, Russian River, Dry Creek—I've logged more miles on those backroads than I care to admit. Disc golf keeps me competitive (and humble). And there's something deeply satisfying about a home improvement project done right—whether it's building custom shelving or finally getting that kitchen backsplash perfect.</p>
                     <div class="personal-interests">
-                        <span class="interest-tag">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                            Bay Area Living
-                        </span>
-                        <span class="interest-tag">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            Wine Enthusiast
-                        </span>
-                        <span class="interest-tag">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            Pod Squad Trips
-                        </span>
-                        <span class="interest-tag">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-                            Family Time
-                        </span>
+                        <span class="interest-tag">Bay Area · Married · Two Kids</span>
+                        <span class="interest-tag">Culinary Enthusiast</span>
+                        <span class="interest-tag">NorCal Wine Regions</span>
+                        <span class="interest-tag">Disc Golf</span>
+                        <span class="interest-tag">Home Improvement</span>
+                        <span class="interest-tag">Farmers Markets</span>
                     </div>
                 </div>
                 <div class="personal-image">
                     <div class="personal-collage">
                         <div class="collage-item">
-                            <div class="emoji">🍷</div>
-                            <h4>Wine Country</h4>
-                            <p>Anderson Valley, Napa, Sonoma explorations</p>
+                            <div class="collage-icon">🍷</div>
+                            <h4>Wine Regions</h4>
+                            <p>NorCal's finest—Anderson Valley to Russian River</p>
                         </div>
                         <div class="collage-item">
-                            <div class="emoji">👨‍👩‍👧‍👦</div>
-                            <h4>Family First</h4>
-                            <p>Quality time with loved ones</p>
+                            <div class="collage-icon">👨‍🍳</div>
+                            <h4>Culinary</h4>
+                            <p>Serious about ingredients, technique, and flavor</p>
                         </div>
                         <div class="collage-item">
-                            <div class="emoji">🥾</div>
-                            <h4>Outdoor Adventures</h4>
-                            <p>Hiking, camping, and exploring</p>
+                            <div class="collage-icon">🥏</div>
+                            <h4>Disc Golf</h4>
+                            <p>Competitive spirit meets outdoor focus</p>
                         </div>
                         <div class="collage-item">
-                            <div class="emoji">🎉</div>
-                            <h4>Pod Squad</h4>
-                            <p>Group trips and celebrations</p>
+                            <div class="collage-icon">🔨</div>
+                            <h4>Home Projects</h4>
+                            <p>Custom builds, renovations, perfecting details</p>
                         </div>
                     </div>
                 </div>
@@ -1138,6 +1264,16 @@
         window.addEventListener('scroll', () => {
             nav.classList.toggle('scrolled', window.scrollY > 50);
         });
+
+        // Partner category toggle
+        function togglePartnerCategory(header) {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+            
+            // Toggle active state
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
