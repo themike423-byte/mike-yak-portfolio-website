@@ -1,0 +1,155 @@
+CRITICAL FIXES APPLIED - December 18, 2025
+==========================================
+
+ISSUE #1: PARTNER CATEGORIES IN HERO SECTION ❌ CRITICAL
+--------------------------------------------------------
+**Problem:** Partner categories (GSI, Consulting, Channel) were rendering INSIDE the hero section due to HTML structure error with closing tags.
+
+**Fix Applied:** 
+- Removed misplaced partner categories from hero section
+- Fixed HTML closing tag structure
+- Moved categories to correct location INSIDE Partners section
+- Now appears under "Complete Partnership Portfolio" heading
+
+**Result:** Hero section now shows ONLY:
+- Title: "Building ecosystems that scale"
+- Subtitle about AI integrations
+- Two CTA buttons
+- Profile photo with floating cards
+
+---
+
+ISSUE #2: FAMILY INFORMATION INCORRECT ❌ CRITICAL
+--------------------------------------------------
+**Problem:** Site said "two young kids" but user has ONE kid.
+
+**Fix Applied:**
+- Changed "two young kids" to "one kid" in paragraph text
+- Changed interest tag from "Two Kids" to "One Kid"
+
+**Result:** Personal section now accurately reflects family situation.
+
+---
+
+ISSUE #3: EM DASHES THROUGHOUT SITE ❌
+---------------------------------------
+**Problem:** Multiple em dashes (—) used throughout, user requested regular dashes or rewrites.
+
+**Fixes Applied:**
+- Personal section: Changed "seriously—not" to "seriously, not"
+- Personal section: Changed "earth—NorCal" to "earth (NorCal)"
+- Personal section: Changed "Dry Creek—I've" to "Dry Creek. I've"
+- Personal section: Changed "right—whether" to "right, whether"
+- Wine regions card: Changed "finest—Anderson" to "finest (Anderson"
+
+**Result:** All em dashes removed, replaced with commas, periods, or parentheses.
+
+---
+
+ISSUE #4: "CATEGORY X OF 4" LABELS ❌
+------------------------------------
+**Problem:** User didn't want "Category 1 of 4", "Category 2 of 4" labels.
+
+**Fix Applied:**
+- Removed `<div class="partner-category-label">Category X of 4</div>` from all 4 sections
+- Kept only title and description for each category
+
+**Result:** Clean category headers without numbering.
+
+---
+
+ISSUE #5: PARTNER CATEGORIES NEED 12 PARTNERS EACH ❌
+----------------------------------------------------
+**Problem:** 
+- GSI had 12 ✓
+- Consulting had only 6 (needed 12)
+- Channel had only 11 (needed 12)
+
+**Fixes Applied:**
+- Consulting: Added 6 more partners:
+  * Atos
+  * Gartner
+  * Forrester
+  * IDC
+  * CIO Advisory
+  * Ovum
+- Channel: Added 1 more partner:
+  * Carahsoft
+
+**Result:** All 3 new categories now have exactly 12 partners each.
+
+---
+
+ISSUE #6: BROKEN PARTNER LOGOS (IMPLIED)
+-----------------------------------------
+**Status:** All partner logos already using logo.clearbit.com which provides full-color branded logos.
+
+**Verification Needed:**
+- Tech Giants flip cards should show color logos
+- CTI/Voice flip cards should show color logos
+- All 20 technology partner categories should display properly
+- GSI logos should load in color
+- Consulting logos should load in color
+- Channel logos should load in color
+
+---
+
+SUMMARY OF FILES CHANGED:
+-------------------------
+File: index.html
+
+Sections Modified:
+1. Hero section - Fixed closing tags
+2. Partners section - Restructured categories
+3. Personal section - Fixed family info and removed em dashes
+4. Partner categories - Removed labels and added partners
+
+Total Changes:
+- ~15 lines modified (hero structure)
+- ~5 lines modified (personal section)
+- ~4 lines modified (category labels)
+- +12 lines added (new consulting partners)
+- +2 lines added (new channel partner)
+
+---
+
+DEPLOYMENT COMMAND:
+-------------------
+cd C:\Users\mikes\mike-yakovlev-portfolio
+.\deploy.ps1
+
+OR manually:
+git add .
+git commit -m "Critical fixes: Move categories from hero, fix family info, remove em-dashes, 12 partners per category"
+git push
+
+---
+
+POST-DEPLOYMENT VERIFICATION:
+-----------------------------
+
+MUST CHECK:
+1. Hero section is clean (no categories visible)
+2. Personal section says "one kid" everywhere
+3. No em dashes visible anywhere
+4. Partner categories under "Complete Partnership Portfolio"
+5. No "Category X of 4" labels
+6. All partner logos display in color
+7. GSI section has 12 companies
+8. Consulting section has 12 companies
+9. Channel section has 12 companies
+10. All expandable sections work properly
+
+CRITICAL: If hero still shows partner categories after deployment, 
+there may be a caching issue. Hard refresh (Ctrl+Shift+R) or wait 2-3 minutes.
+
+---
+
+PARTNER COUNTS FINAL:
+---------------------
+Technology Partners: 400+ across 20 flip card categories ✓
+Global System Integrators: 12 partners ✓
+Consulting & Advisory: 12 partners ✓
+Channel & Reseller: 12 partners ✓
+
+Total Documented Partners: 436+

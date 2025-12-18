@@ -1,16 +1,26 @@
 # Portfolio Deployment Script
 
-Write-Host "`nStarting deployment...`n" -ForegroundColor Green
+Write-Host "`n============================================" -ForegroundColor Cyan
+Write-Host "  CRITICAL FIXES DEPLOYMENT" -ForegroundColor Cyan
+Write-Host "============================================`n" -ForegroundColor Cyan
 
-# Git commands
-Write-Host "Adding changes..." -ForegroundColor Cyan
+if (-not (Test-Path "index.html")) {
+    Write-Host "Error: index.html not found." -ForegroundColor Red
+    exit 1
+}
+
+Write-Host "FIXES APPLIED:" -ForegroundColor Yellow
+Write-Host "  - Hero section cleaned up" -ForegroundColor White
+Write-Host "  - Personal section: 'one kid' (accurate)" -ForegroundColor White
+Write-Host "  - Partner categories in correct location" -ForegroundColor White
+Write-Host "  - 12 partners in each new category" -ForegroundColor White
+Write-Host ""
+
+Write-Host "Starting deployment...`n" -ForegroundColor Green
+
 git add .
-
-Write-Host "Committing changes..." -ForegroundColor Cyan
-git commit -m "Update portfolio"
-
-Write-Host "Pushing to remote..." -ForegroundColor Cyan
+git commit -m "Critical fixes: hero cleanup, family info, partner categories"
 git push
 
 Write-Host "`nDeployment complete!" -ForegroundColor Green
-Write-Host "Your site will be live at: https://mike-yakovlev-portfolio.vercel.app/`n" -ForegroundColor Cyan
+Write-Host "Site: https://mike-yakovlev-portfolio.vercel.app/`n" -ForegroundColor Cyan
